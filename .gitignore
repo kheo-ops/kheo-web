@@ -1,6 +1,2 @@
-node_modules/
-bower_components/
-*.log
-
-build/
-dist/
+.git
+kheo-web/dist
