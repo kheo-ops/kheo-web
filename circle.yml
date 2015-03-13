@@ -1,0 +1,12 @@
+dependencies:
+  pre:
+    - npm install
+    - bower install
+
+test:
+  pre:
+    - grunt jshint    
+  override:
+    - grunt karma:unit
+    - grunt replace:ci
+    - grunt build
