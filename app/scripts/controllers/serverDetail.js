@@ -11,12 +11,11 @@ module.controller('ServerDetailCtrl', ['$scope', '$resource', '$routeParams', 'c
 
     $scope.filterPluginProperties = function(plugin) {
         $scope.pluginProperties = _.filter($scope.server.serverProperties, function(property) {
-          return property.type === plugin.propertyName;
+          return _.contains(plugin.propertiesNames, property.type);
         });
     };
 
-    $scope.getKeys = function(property) {
-        console.log(property)
+    $scope.getKeys = function(property) {        
         return _.reject(_.keys(property), function(element) {            
             return element === 'type' || element === '$$hashKey' || element === 'key' || element === '@kheo-type';
         });
@@ -35,7 +34,6 @@ module.controller('ServerDetailCtrl', ['$scope', '$resource', '$routeParams', 'c
     };
 
     $scope.getEventAlignment = function() {
-        console.log($scope.privateCount);
         $scope.privateCount = $scope.privateCount+1;
         return $scope.privateCount % 2 == 0 ? 'left' : 'right';
     }
