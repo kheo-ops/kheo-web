@@ -1,5 +1,6 @@
 # kheo-web
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+[![Circle CI](https://circleci.com/gh/kheo-ops/kheo-core/tree/master.svg?style=shield)](https://circleci.com/gh/kheo-ops/kheo-web)
 
 ## Overview
 Web frontend for Kheo project. 
