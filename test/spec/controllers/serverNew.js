@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: ServernewCtrl', function () {
+describe('Controller: ServerNewCtrl', function () {
 
   // load the controller's module
   beforeEach(module('kheoApp'));
@@ -11,12 +11,11 @@ describe('Controller: ServernewCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    ServernewCtrl = $controller('ServernewCtrl', {
+    ServernewCtrl = $controller('ServerNewCtrl', {
       $scope: scope
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('should attach a list of awesomeThings to the scope', function () {    
   });
 });
