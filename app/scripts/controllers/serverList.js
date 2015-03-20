@@ -1,8 +1,6 @@
 'use strict';
 
-var module = angular.module('kheoApp');
-
-module.controller('ServerListCtrl', ['$scope', '$resource', 'configuration', function ($scope, $resource, configuration) {
+angular.module('kheoApp').controller('ServerListCtrl', ['$scope', '$resource', 'configuration', function ($scope, $resource, configuration) {
     $scope.servers = [];
 
     $scope.init = function() {

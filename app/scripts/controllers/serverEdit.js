@@ -1,7 +1,7 @@
 'use strict';
-var module = angular.module('kheoApp');
 
-module.controller('ServerEditCtrl', ['$scope', '$resource', '$routeParams', 'configuration', '_', function ($scope, $resource, $routeParams, configuration, _) {
+angular.module('kheoApp')
+  .controller('ServerEditCtrl', ['$scope', '$resource', '$routeParams', 'configuration', '_', function ($scope, $resource, $routeParams, configuration, _) {
     $scope.server = $resource(configuration.backend + '/servers/' + $routeParams.hostname).get();
 
     $scope.save = function() {

@@ -1,8 +1,6 @@
 'use strict';
 
-var module = angular.module('kheoApp');
-
-module.controller('ServerDetailCtrl', ['$scope', '$resource', '$routeParams', 'configuration', '_', function ($scope, $resource, $routeParams, configuration, _) {
+angular.module('kheoApp').controller('ServerDetailCtrl', ['$scope', '$resource', '$routeParams', 'configuration', '_', function ($scope, $resource, $routeParams, configuration, _) {
     
     $scope.privateCount = 0;
     $scope.server = $resource(configuration.backend + '/servers/' + $routeParams.hostname).get();
@@ -35,6 +33,6 @@ module.controller('ServerDetailCtrl', ['$scope', '$resource', '$routeParams', 'c
 
     $scope.getEventAlignment = function() {
         $scope.privateCount = $scope.privateCount+1;
-        return $scope.privateCount % 2 == 0 ? 'left' : 'right';
-    }
+        return $scope.privateCount % 2 === 0 ? 'left' : 'right';
+    };
 }]);

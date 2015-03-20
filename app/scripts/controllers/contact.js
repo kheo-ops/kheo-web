@@ -8,5 +8,5 @@
  * Controller of the kheoApp
  */
 angular.module('kheoApp')
-  .controller('ContactCtrl', function ($scope) {    
+  .controller('ContactCtrl', function () {    
   });

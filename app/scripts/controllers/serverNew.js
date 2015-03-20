@@ -1,8 +1,6 @@
 'use strict';
 
-var module = angular.module('kheoApp');
-
-module.controller('ServerNewCtrl', ['$scope', '$resource', '$location', 'configuration', '_', function ($scope, $resource, $location, configuration, _) {
+angular.module('kheoApp').controller('ServerNewCtrl', ['$scope', '$resource', '$location', 'configuration', '_', function ($scope, $resource, $location, configuration, _) {
     $scope.plugins = $resource(configuration.backend + '/plugins').query();
     $scope.server = {};
 

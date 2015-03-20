@@ -8,6 +8,6 @@
  * Controller of the kheoApp
  */
 angular.module('kheoApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function () {
     
   });
