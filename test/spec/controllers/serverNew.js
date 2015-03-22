@@ -46,24 +46,132 @@ describe('Controller: ServerNewCtrl', function () {
   });
 
   it('should save server if it is defined', function () {    
-    $httpBackend.when('GET', configuration.backend + '/plugins').respond(200, []);
+    
+    var mockData = [
+      {
+        'name': 'ServicePlugin',
+        'propertiesNames': [
+            'ServiceServerProperty'
+        ],
+        'version': '1.0'
+      },
+      {
+        'name': 'NetworkInterfacePlugin',
+        'propertiesNames': [
+            'NetworkInterfaceServerProperty'
+        ],
+        'version': '1.0'
+      }
+    ];
+
+    $httpBackend.when('GET', configuration.backend + '/plugins').respond(200, mockData);
     $httpBackend.expectGET(configuration.backend + '/plugins');
     
     $httpBackend.when('POST', configuration.backend + '/servers').respond(201);
     $httpBackend.expectPOST(configuration.backend + '/servers');
     
     scope.server = {
-      'id': '78ce12f4-c378-4afb-b3ea-d2a2b886652b',
+      'host': 'localhost',
+      'sshPort': 22,
+      'user': 'mikael',
+      'password': 'pass',
+      'privateKey': '',
+      'sudo': true
+    };
+    scope.save();
+    $httpBackend.flush();
+  });
+
+  it('should initialize a new server discovery settings with available plugins', function () {    
+    
+    var mockData = [
+      {
+        'name': 'ServicePlugin',
+        'propertiesNames': [
+            'ServiceServerProperty'
+        ],
+        'version': '1.0'
+      },
+      {
+        'name': 'NetworkInterfacePlugin',
+        'propertiesNames': [
+            'NetworkInterfaceServerProperty'
+        ],
+        'version': '1.0'
+      }
+    ];
+
+    $httpBackend.when('GET', configuration.backend + '/plugins').respond(200, mockData);
+    $httpBackend.expectGET(configuration.backend + '/plugins');
+    
+    scope.server = {
+      'host': 'localhost',
+      'sshPort': 22,
+      'user': 'mikael',
+      'password': 'pass',
+      'privateKey': '',
+      'sudo': true
+    };
+
+    $httpBackend.flush();
+    scope.initSettings();
+    
+    expect(scope.server.discoverySettings).toBeDefined();
+    expect(scope.server.discoverySettings.ServicePlugin).toBeDefined();
+    expect(scope.server.discoverySettings.ServicePlugin).toBe(true);
+    expect(scope.server.discoverySettings.NetworkInterfacePlugin).toBeDefined();
+    expect(scope.server.discoverySettings.NetworkInterfacePlugin).toBe(true);
+  });
+
+it('should not initialize an existing server discovery settings with available plugins', function () {    
+    
+    var mockData = [
+      {
+        'name': 'ServicePlugin',
+        'propertiesNames': [
+            'ServiceServerProperty'
+        ],
+        'version': '1.0'
+      }
+    ];
+
+    $httpBackend.when('GET', configuration.backend + '/plugins').respond(200, mockData);
+    $httpBackend.expectGET(configuration.backend + '/plugins');
+    
+    scope.server = {
       'host': 'localhost',
       'sshPort': 22,
       'user': 'mikael',
       'password': 'pass',
       'privateKey': '',
       'sudo': true,
-      'sshConnectionValidity': true,
-      'state': 'READY'
+      'discoverySettings': { 'MyService': true }
     };
-    scope.save();
+
     $httpBackend.flush();
+    scope.initSettings();
+    
+    expect(scope.server.discoverySettings).toBeDefined();
+    expect(scope.server.discoverySettings.ServicePlugin).not.toBeDefined();
+    expect(scope.server.discoverySettings.MyService).toBe(true);
+  });
+
+it('should filter properties to display', function () {
+    
+    $httpBackend.when('GET', configuration.backend + '/plugins').respond(200, []);
+    $httpBackend.expectGET(configuration.backend + '/plugins');
+    $httpBackend.flush();
+
+    var property = {
+      'foo': 'bar',
+      'type': 'type',
+      '$$hashKey': 'foobar',
+      'key': 'key'
+    };
+    
+    var result = scope.getKeys(property);
+    console.log(JSON.stringify(result));
+    expect(result.length).toBe(1);
+    expect(result[0]).toBe('foo');
   });
 });
