@@ -1,0 +1,589 @@
+{
+    "id": "08af5cf1-c4ff-4fcb-b6e5-747dbb9643e6",
+    "host": "localhost",
+    "sshPort": 22,
+    "user": "mikael",
+    "password": "password",
+    "privateKey": "",
+    "sudo": true,
+    "sshConnectionValidity": true,
+    "state": "READY",
+    "discoverySettings": {
+        "OsPlugin": true,
+        "ListeningProcessPlugin": true,
+        "NetworkInterfacePlugin": true,
+        "LogoPngPlugin": true,
+        "LogoPlugin": true,
+        "ServicePlugin": true
+    },
+    "serverProperties": [
+        {
+            "type": "LogoImagePngServerProperty",
+            "key": "logo",
+            "encodedImage": "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",
+            "@kheo-type": "PNG"
+        },
+        {
+            "type": "DescriptionLogoPngServerProperty",
+            "key": "logo",
+            "description": "logo",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "LogoServerProperty",
+            "key": "logo",
+            "encodedImage": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTI2cHgiIGhlaWdodD0iMTI2cHgiIHZpZXdCb3g9IjAgMCAxMjYgMTI2IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjYgMTI2IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxyZWN0IHg9IjEuMDk1IiB5PSI5OC4yMjQiIHdpZHRoPSIxMjMuODEiIGhlaWdodD0iMTkuMjc1Ii8+DQoJPHJlY3QgeD0iMS4wOTUiIHk9Ijg1Ljc0IiB3aWR0aD0iMTIzLjgxIiBoZWlnaHQ9IjUuMjA1Ii8+DQoJPHBhdGggZD0iTTE4LjQwNCw5NS43MjFjMC43NjcsMCwxLjM4OS0wLjYyMywxLjM4OS0xLjM5cy0wLjYyMi0xLjM4OC0xLjM4OS0xLjM4OEgzLjQ4MWMtMC43NjcsMC0xLjM4OCwwLjYyMS0xLjM4OCwxLjM4OA0KCQlzMC42MjIsMS4zOSwxLjM4OCwxLjM5SDE4LjQwNHoiLz4NCgk8cGF0aCBkPSJNNDQuNDMzLDk1LjcyMWMwLjc2NywwLDEuMzg4LTAuNjIzLDEuMzg4LTEuMzlzLTAuNjIyLTEuMzg4LTEuMzg4LTEuMzg4SDI5LjUxYy0wLjc2NywwLTEuMzg5LDAuNjIxLTEuMzg5LDEuMzg4DQoJCXMwLjYyMiwxLjM5LDEuMzg5LDEuMzlINDQuNDMzeiIvPg0KCTxwYXRoIGQ9Ik03MC40NjEsOTUuNzIxYzAuNzY3LDAsMS4zODgtMC42MjMsMS4zODgtMS4zOXMtMC42MjItMS4zODgtMS4zODgtMS4zODhINTUuNTM5Yy0wLjc2NywwLTEuMzg4LDAuNjIxLTEuMzg4LDEuMzg4DQoJCXMwLjYyMiwxLjM5LDEuMzg4LDEuMzlINzAuNDYxeiIvPg0KCTxwYXRoIGQ9Ik05Ni40OSw5NS43MjFjMC43NjcsMCwxLjM4OS0wLjYyMywxLjM4OS0xLjM5cy0wLjYyMi0xLjM4OC0xLjM4OS0xLjM4OEg4MS41NjdjLTAuNzY3LDAtMS4zODgsMC42MjEtMS4zODgsMS4zODgNCgkJczAuNjIyLDEuMzksMS4zODgsMS4zOUg5Ni40OXoiLz4NCgk8cGF0aCBkPSJNMTIyLjUxOSw5NS43MjFjMC43NjcsMCwxLjM4OS0wLjYyMywxLjM4OS0xLjM5cy0wLjYyMi0xLjM4OC0xLjM4OS0xLjM4OGgtMTQuOTIzYy0wLjc2NywwLTEuMzg4LDAuNjIxLTEuMzg4LDEuMzg4DQoJCXMwLjYyMiwxLjM5LDEuMzg4LDEuMzlIMTIyLjUxOXoiLz4NCgk8cGF0aCBkPSJNNy40MSw4MC45aDUzLjQ0MmMwLjg2MywwLDEuNTYyLTAuNjk5LDEuNTYyLTEuNTYyVjM5LjU0M2MwLTAuODYyLTAuNjk5LTEuNTYzLTEuNTYyLTEuNTYzSDQ1LjMxNHYtNi41MzkNCgkJYzAtMC44NjEtMC42OTgtMS41NjItMS41NjEtMS41NjJIMjMuNDI4Yy0wLjg2MywwLTEuNTYyLDAuNy0xLjU2MiwxLjU2MnY2LjU0SDcuNDFjLTAuODYyLDAtMS41NjIsMC43LTEuNTYyLDEuNTYzdjM5Ljc5NQ0KCQlDNS44NDgsODAuMjAxLDYuNTQ3LDgwLjksNy40MSw4MC45eiBNMzQuNDkyLDU3Ljg3NGgtMS43OTZ2LTYuNzY4aDEuNzk2VjU3Ljg3NHogTTI2LjU2MywzNC41NzRoMTQuMDU1djMuNDA2SDI2LjU2M1YzNC41NzR6DQoJCSBNMTAuNTQ0LDQyLjY3OGg0Ny4xNzN2MTEuOThIMzYuOTQydi00LjAwNmMwLTAuODYzLTAuNjk5LTEuNTYzLTEuNTYyLTEuNTYzaC0zLjU4MmMtMC44NjMsMC0xLjU2MiwwLjY5OS0xLjU2MiwxLjU2M3Y0LjAwNg0KCQlIMTAuNTQ0VjQyLjY3OHoiLz4NCgk8cGF0aCBkPSJNNjguNzM0LDgwLjloNDkuOTU4YzAuODA3LDAsMS40Ni0wLjY1MywxLjQ2LTEuNDZWMTcuNTM0YzAtMC44MDYtMC42NTMtMS40NTktMS40Ni0xLjQ1OWgtMTQuNTI0VjkuOTYxDQoJCWMwLTAuODA3LTAuNjUzLTEuNDYtMS40Ni0xLjQ2aC0xOWMtMC44MDcsMC0xLjQ2LDAuNjUzLTEuNDYsMS40NnY2LjExNUg2OC43MzRjLTAuODA3LDAtMS40NiwwLjY1My0xLjQ2LDEuNDU5Vjc5LjQ0DQoJCUM2Ny4yNzQsODAuMjQ3LDY3LjkyNyw4MC45LDY4LjczNCw4MC45eiBNODYuNjM4LDEyLjg5aDEzLjEzOXYzLjE4Nkg4Ni42MzhWMTIuODl6Ii8+DQo8L2c+DQo8L3N2Zz4NCg==",
+            "@kheo-type": "SVG"
+        },
+        {
+            "type": "NetworkInterfaceServerProperty",
+            "key": "docker0",
+            "inetAddress": "",
+            "inet6Address": "",
+            "encapsulationType": "Ethernet",
+            "name": "docker0",
+            "broadcast": "0.0.0.0",
+            "mask": "",
+            "macAddress": "56:84:7a:fe:97:99",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "NetworkInterfaceServerProperty",
+            "key": "eth0",
+            "inetAddress": "",
+            "inet6Address": "",
+            "encapsulationType": "Ethernet",
+            "name": "eth0",
+            "broadcast": "192.168.200.255",
+            "mask": "",
+            "macAddress": "b8:ca:3a:8b:ae:17",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "NetworkInterfaceServerProperty",
+            "key": "lo",
+            "inetAddress": "",
+            "inet6Address": "",
+            "encapsulationType": "Boucle locale",
+            "name": "lo",
+            "broadcast": "",
+            "mask": "",
+            "macAddress": "",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "acpid",
+            "name": "acpid",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "anacron",
+            "name": "anacron",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "apache2",
+            "name": "apache2",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "apparmor",
+            "name": "apparmor",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "avahi-daemon",
+            "name": "avahi-daemon",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "bluetooth",
+            "name": "bluetooth",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "brltty",
+            "name": "brltty",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "casper",
+            "name": "casper",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "cgroup-lite",
+            "name": "cgroup-lite",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "console-font",
+            "name": "console-font",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "console-setup",
+            "name": "console-setup",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "cron",
+            "name": "cron",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "cups",
+            "name": "cups",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "cups-browsed",
+            "name": "cups-browsed",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "dbus",
+            "name": "dbus",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "docker",
+            "name": "docker",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "friendly-recovery",
+            "name": "friendly-recovery",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "hddtemp",
+            "name": "hddtemp",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "heartbeat",
+            "name": "heartbeat",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "kerneloops",
+            "name": "kerneloops",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "kmod",
+            "name": "kmod",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "lm-sensors",
+            "name": "lm-sensors",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "logd",
+            "name": "logd",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "mdm",
+            "name": "mdm",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "mongodb",
+            "name": "mongodb",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "nmbd",
+            "name": "nmbd",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "openbsd-inetd",
+            "name": "openbsd-inetd",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "postfix",
+            "name": "postfix",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "procps",
+            "name": "procps",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "pulseaudio",
+            "name": "pulseaudio",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "rabbitmq-server",
+            "name": "rabbitmq-server",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "resolvconf",
+            "name": "resolvconf",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "rfkill-restore",
+            "name": "rfkill-restore",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "rfkill-store",
+            "name": "rfkill-store",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "rsync",
+            "name": "rsync",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "rsyslog",
+            "name": "rsyslog",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "samba",
+            "name": "samba",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "saned",
+            "name": "saned",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "setvtrgb",
+            "name": "setvtrgb",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "smbd",
+            "name": "smbd",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "ssh",
+            "name": "ssh",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "sudo",
+            "name": "sudo",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "tomcat7",
+            "name": "tomcat7",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "udev",
+            "name": "udev",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "unattended-upgrades",
+            "name": "unattended-upgrades",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "urandom",
+            "name": "urandom",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "vboxballoonctrl-service",
+            "name": "vboxballoonctrl-service",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "vboxdrv",
+            "name": "vboxdrv",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "vboxweb-service",
+            "name": "vboxweb-service",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "virtualbox-guest-utils",
+            "name": "virtualbox-guest-utils",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ServiceServerProperty",
+            "key": "x11-common",
+            "name": "x11-common",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp - 445",
+            "programName": "/smbd",
+            "pid": "931",
+            "port": "445",
+            "protocol": "tcp",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp - 6942",
+            "programName": "/java",
+            "pid": "23961",
+            "port": "6942",
+            "protocol": "tcp",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp - 58179",
+            "programName": "/beam.smp",
+            "pid": "2136",
+            "port": "58179",
+            "protocol": "tcp",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp - 9000",
+            "programName": "/grunt",
+            "pid": "2095",
+            "port": "9000",
+            "protocol": "tcp",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp - 27017",
+            "programName": "/mongod",
+            "pid": "1610",
+            "port": "27017",
+            "protocol": "tcp",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp - 6379",
+            "programName": "/redis-server",
+            "pid": "16606",
+            "port": "6379",
+            "protocol": "tcp",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp - 139",
+            "programName": "/smbd",
+            "pid": "931",
+            "port": "139",
+            "protocol": "tcp",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp - 63342",
+            "programName": "/java",
+            "pid": "23961",
+            "port": "63342",
+            "protocol": "tcp",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp - 35729",
+            "programName": "/grunt",
+            "pid": "2095",
+            "port": "35729",
+            "protocol": "tcp",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp - 28017",
+            "programName": "/mongod",
+            "pid": "1610",
+            "port": "28017",
+            "protocol": "tcp",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp - 4369",
+            "programName": "/epmd",
+            "pid": "1806",
+            "port": "4369",
+            "protocol": "tcp",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp - 53",
+            "programName": "/dnsmasq",
+            "pid": "1829",
+            "port": "53",
+            "protocol": "tcp",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp - 22",
+            "programName": "/sshd",
+            "pid": "1528",
+            "port": "22",
+            "protocol": "tcp",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp - 631",
+            "programName": "/cupsd",
+            "pid": "10380",
+            "port": "631",
+            "protocol": "tcp",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp6 - 445",
+            "programName": "/smbd",
+            "pid": "931",
+            "port": "445",
+            "protocol": "tcp6",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp6 - 5672",
+            "programName": "/beam.smp",
+            "pid": "2136",
+            "port": "5672",
+            "protocol": "tcp6",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp6 - 139",
+            "programName": "/smbd",
+            "pid": "931",
+            "port": "139",
+            "protocol": "tcp6",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp6 - 8080",
+            "programName": "/java",
+            "pid": "1794",
+            "port": "8080",
+            "protocol": "tcp6",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp6 - 80",
+            "programName": "/apache2",
+            "pid": "2787",
+            "port": "80",
+            "protocol": "tcp6",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp6 - 8081",
+            "programName": "/java",
+            "pid": "1794",
+            "port": "8081",
+            "protocol": "tcp6",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp6 - 22",
+            "programName": "/sshd",
+            "pid": "1528",
+            "port": "22",
+            "protocol": "tcp6",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "ListeningProcessServerProperty",
+            "key": "tcp6 - 631",
+            "programName": "/cupsd",
+            "pid": "10380",
+            "port": "631",
+            "protocol": "tcp6",
+            "@kheo-type": "JSON"
+        },
+        {
+            "type": "OsServerProperty",
+            "key": "GNU/Linux\n",
+            "name": "GNU/Linux\n",
+            "kernelName": "Linux",
+            "kernelRelease": "3.11.0-12-generic",
+            "hardwarePlatform": "x86_64",
+            "@kheo-type": "JSON"
+        }
+    ],
+    "eventLog": []
+}

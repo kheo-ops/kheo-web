@@ -1,0 +1,16 @@
+[
+  {
+    "name": "ServicePlugin",
+    "propertiesNames": [
+      "ServiceServerProperty"
+    ],
+    "version": "1.0"
+  },
+  {
+    "name": "NetworkInterfacePlugin",
+    "propertiesNames": [
+      "NetworkInterfaceServerProperty"
+    ],
+    "version": "1.0"
+  }
+]

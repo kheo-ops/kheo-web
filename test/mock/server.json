@@ -1,0 +1,11 @@
+{
+    "id": "08af5cf1-c4ff-4fcb-b6e5-747dbb9643e6",
+    "host": "localhost",
+    "sshPort": 22,
+    "user": "mikael",
+    "password": "password",
+    "privateKey": "",
+    "sudo": true,
+    "sshConnectionValidity": true,
+    "state": "READY"
+}
