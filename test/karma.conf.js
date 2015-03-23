@@ -26,9 +26,11 @@ module.exports = function(config) {
       'bower_components/angular-bindonce/bindonce.js',
       'bower_components/angular-timeline/src/angular-timeline.js',
       'bower_components/underscore/underscore.js',
+      'bower_components/karma-read-json/karma-read-json.js',
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'test/mock/**/*.js',      
+      'test/spec/**/*.js',
+      { pattern: 'test/mock/**/*.json', included: false }
     ],
 
     // list of files / patterns to exclude

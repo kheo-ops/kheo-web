@@ -10,7 +10,7 @@ describe('Controller: ServerNewCtrl', function () {
   beforeEach(inject(function($injector) {
     $httpBackend = $injector.get('$httpBackend');
     $rootScope = $injector.get('$rootScope');
-    $resource = $injector.get('$resource');    
+    $resource = $injector.get('$resource');
     $controller = $injector.get('$controller');
     $location = $injector.get('$location');
     configuration = $injector.get('configuration');
@@ -21,9 +21,11 @@ describe('Controller: ServerNewCtrl', function () {
       '$scope': scope,
       '$resource': $resource,
       '$location': $location,
-      'configuration': configuration,      
+      'configuration': configuration,
       '_': _
-    });    
+    });
+    
+    $httpBackend.when('GET', configuration.backend + '/plugins').respond(200, readJSON('test/mock/plugins.json'));
   }));
 
   afterEach(function() {
@@ -32,41 +34,18 @@ describe('Controller: ServerNewCtrl', function () {
    });
 
   it('should retrieve plugins on initialization', function () {
-    $httpBackend.when('GET', configuration.backend + '/plugins').respond(200, []);
     $httpBackend.expectGET(configuration.backend + '/plugins');
     $httpBackend.flush();
   });
 
   it('should not save server if it is undefined', function () {
-    $httpBackend.when('GET', configuration.backend + '/plugins').respond(200, []);
     $httpBackend.expectGET(configuration.backend + '/plugins');
-    
     scope.save();
     $httpBackend.flush();
   });
 
-  it('should save server if it is defined', function () {    
-    
-    var mockData = [
-      {
-        'name': 'ServicePlugin',
-        'propertiesNames': [
-            'ServiceServerProperty'
-        ],
-        'version': '1.0'
-      },
-      {
-        'name': 'NetworkInterfacePlugin',
-        'propertiesNames': [
-            'NetworkInterfaceServerProperty'
-        ],
-        'version': '1.0'
-      }
-    ];
-
-    $httpBackend.when('GET', configuration.backend + '/plugins').respond(200, mockData);
+  it('should save server if it is defined', function () {
     $httpBackend.expectGET(configuration.backend + '/plugins');
-    
     $httpBackend.when('POST', configuration.backend + '/servers').respond(201);
     $httpBackend.expectPOST(configuration.backend + '/servers');
     
@@ -82,26 +61,7 @@ describe('Controller: ServerNewCtrl', function () {
     $httpBackend.flush();
   });
 
-  it('should initialize a new server discovery settings with available plugins', function () {    
-    
-    var mockData = [
-      {
-        'name': 'ServicePlugin',
-        'propertiesNames': [
-            'ServiceServerProperty'
-        ],
-        'version': '1.0'
-      },
-      {
-        'name': 'NetworkInterfacePlugin',
-        'propertiesNames': [
-            'NetworkInterfaceServerProperty'
-        ],
-        'version': '1.0'
-      }
-    ];
-
-    $httpBackend.when('GET', configuration.backend + '/plugins').respond(200, mockData);
+  it('should initialize a new server discovery settings with available plugins', function () {
     $httpBackend.expectGET(configuration.backend + '/plugins');
     
     scope.server = {
@@ -123,19 +83,7 @@ describe('Controller: ServerNewCtrl', function () {
     expect(scope.server.discoverySettings.NetworkInterfacePlugin).toBe(true);
   });
 
-it('should not initialize an existing server discovery settings with available plugins', function () {    
-    
-    var mockData = [
-      {
-        'name': 'ServicePlugin',
-        'propertiesNames': [
-            'ServiceServerProperty'
-        ],
-        'version': '1.0'
-      }
-    ];
-
-    $httpBackend.when('GET', configuration.backend + '/plugins').respond(200, mockData);
+it('should not initialize an existing server discovery settings with available plugins', function () {
     $httpBackend.expectGET(configuration.backend + '/plugins');
     
     scope.server = {
@@ -156,9 +104,7 @@ it('should not initialize an existing server discovery settings with available p
     expect(scope.server.discoverySettings.MyService).toBe(true);
   });
 
-it('should filter properties to display', function () {
-    
-    $httpBackend.when('GET', configuration.backend + '/plugins').respond(200, []);
+it('should filter type hashkey and key fields from properties to display', function () {
     $httpBackend.expectGET(configuration.backend + '/plugins');
     $httpBackend.flush();
 
@@ -170,7 +116,6 @@ it('should filter properties to display', function () {
     };
     
     var result = scope.getKeys(property);
-    console.log(JSON.stringify(result));
     expect(result.length).toBe(1);
     expect(result[0]).toBe('foo');
   });
