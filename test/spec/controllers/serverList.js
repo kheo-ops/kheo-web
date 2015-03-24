@@ -19,7 +19,9 @@ describe('Controller: ServerListCtrl', function () {
       '$scope': scope,
       '$resource': $resource,
       'configuration': configuration
-    });    
+    });
+
+    $httpBackend.when('GET', configuration.backend + '/servers').respond(200, readJSON('test/mock/servers.json'));
   }));
 
   afterEach(function() {
@@ -28,29 +30,16 @@ describe('Controller: ServerListCtrl', function () {
    });
 
   it('should retrieve servers on initialization', function () {
-
-    var mockData = [{
-        'id': '78ce12f4-c378-4afb-b3ea-d2a2b886652b',
-        'host': 'localhost',
-        'sshPort': 22,
-        'user': 'mikael',
-        'password': 'pass',
-        'privateKey': '',
-        'sudo': true,
-        'sshConnectionValidity': true,
-        'state': 'READY'
-    }];
-
-    $httpBackend.when('GET', configuration.backend + '/servers').respond(200, mockData);
+    
     $httpBackend.expectGET(configuration.backend + '/servers');
     $httpBackend.flush();
 
     expect(scope.servers.length).toBe(1);
-    expect(scope.servers[0].id).toBe('78ce12f4-c378-4afb-b3ea-d2a2b886652b');
+    expect(scope.servers[0].id).toBe('08af5cf1-c4ff-4fcb-b6e5-747dbb9643e6');
     expect(scope.servers[0].host).toBe('localhost');
     expect(scope.servers[0].sshPort).toBe(22);
     expect(scope.servers[0].user).toBe('mikael');
-    expect(scope.servers[0].password).toBe('pass');
+    expect(scope.servers[0].password).toBe('password');
     expect(scope.servers[0].privateKey).toBe('');
     expect(scope.servers[0].sudo).toBe(true);
     expect(scope.servers[0].sshConnectionValidity).toBe(true);
@@ -58,20 +47,6 @@ describe('Controller: ServerListCtrl', function () {
   });
 
   it('should retrieve servers after deletion', function () {
-
-    var mockData = [{
-        'id': '78ce12f4-c378-4afb-b3ea-d2a2b886652b',
-        'host': 'localhost',
-        'sshPort': 22,
-        'user': 'mikael',
-        'password': 'pass',
-        'privateKey': '',
-        'sudo': true,
-        'sshConnectionValidity': true,
-        'state': 'READY'
-    }];
-
-    $httpBackend.when('GET', configuration.backend + '/servers').respond(200, mockData);
     $httpBackend.expectGET(configuration.backend + '/servers');
 
     $httpBackend.when('DELETE', configuration.backend + '/servers/myserver').respond(204);

@@ -49,29 +49,14 @@ describe('Controller: ServerNewCtrl', function () {
     $httpBackend.when('POST', configuration.backend + '/servers').respond(201);
     $httpBackend.expectPOST(configuration.backend + '/servers');
     
-    scope.server = {
-      'host': 'localhost',
-      'sshPort': 22,
-      'user': 'mikael',
-      'password': 'pass',
-      'privateKey': '',
-      'sudo': true
-    };
+    scope.server = readJSON('test/mock/sampleServer.json');
     scope.save();
     $httpBackend.flush();
   });
 
   it('should initialize a new server discovery settings with available plugins', function () {
     $httpBackend.expectGET(configuration.backend + '/plugins');
-    
-    scope.server = {
-      'host': 'localhost',
-      'sshPort': 22,
-      'user': 'mikael',
-      'password': 'pass',
-      'privateKey': '',
-      'sudo': true
-    };
+    scope.server = readJSON('test/mock/sampleServer.json');
 
     $httpBackend.flush();
     scope.initSettings();
@@ -85,16 +70,9 @@ describe('Controller: ServerNewCtrl', function () {
 
 it('should not initialize an existing server discovery settings with available plugins', function () {
     $httpBackend.expectGET(configuration.backend + '/plugins');
-    
-    scope.server = {
-      'host': 'localhost',
-      'sshPort': 22,
-      'user': 'mikael',
-      'password': 'pass',
-      'privateKey': '',
-      'sudo': true,
-      'discoverySettings': { 'MyService': true }
-    };
+
+    scope.server = readJSON('test/mock/sampleServer.json');
+    scope.server.discoverySettings = { 'MyService': true };
 
     $httpBackend.flush();
     scope.initSettings();

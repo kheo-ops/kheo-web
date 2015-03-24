@@ -1,0 +1,8 @@
+{
+  "host": "localhost",
+  "sshPort": 22,
+  "user": "mikael",
+  "password": "password",
+  "privateKey": "",
+  "sudo": true
+}
