@@ -16,7 +16,7 @@ describe('Controller: ServerNewCtrl', function () {
     configuration = $injector.get('configuration');
     _ = $injector.get('_');
 
-    scope = $rootScope.$new();    
+    scope = $rootScope.$new();
     ServerNewCtrl = $controller('ServerNewCtrl', {
       '$scope': scope,
       '$resource': $resource,
@@ -24,7 +24,7 @@ describe('Controller: ServerNewCtrl', function () {
       'configuration': configuration,
       '_': _
     });
-    
+
     $httpBackend.when('GET', configuration.backend + '/plugins').respond(200, readJSON('test/mock/plugins.json'));
   }));
 

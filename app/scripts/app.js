@@ -18,13 +18,13 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html'        
+        templateUrl: 'views/main.html'
       })
       .when('/about', {
-        templateUrl: 'views/about.html'        
+        templateUrl: 'views/about.html'
       })
       .when('/contact', {
-        templateUrl: 'views/contact.html'        
+        templateUrl: 'views/contact.html'
       })
       .when('/servers', {
         templateUrl: 'views/server-list.html',

@@ -5,8 +5,8 @@ angular.module('kheoApp')
     $scope.server = $resource(configuration.backend + '/servers/' + $routeParams.hostname).get();
 
     $scope.save = function() {
-    	$scope.server.serverProperties = [];
-    	$scope.server.eventLog = [];
+        $scope.server.serverProperties = [];
+        $scope.server.eventLog = [];
 
         $resource(configuration.backend + '/servers/:host', 
                   {host: '@host'}, 

@@ -13,7 +13,7 @@ describe('Controller: ServerDetailCtrl', function () {
     $resource = $injector.get('$resource');
     $controller = $injector.get('$controller');
     configuration = $injector.get('configuration');
-    _ = $injector.get('_');    
+    _ = $injector.get('_');
 
     scope = $rootScope.$new();
     ServerDetailCtrl = $controller('ServerDetailCtrl', {
@@ -38,4 +38,17 @@ describe('Controller: ServerDetailCtrl', function () {
     $httpBackend.expectGET(configuration.backend + '/plugins');
     $httpBackend.flush();
   });
+
+  it('should filter properties function of plugin', function() {
+    $httpBackend.flush();
+    scope.filterPluginProperties(scope.plugins[0]);
+    expect(scope.pluginProperties.length).toBe(3);
+  });
+
+  it('should filter keys to ', function() {
+    $httpBackend.flush();
+    scope.filterPluginProperties(scope.plugins[0]);
+    expect(scope.pluginProperties.length).toBe(3);
+  });
+
 });

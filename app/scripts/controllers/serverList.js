@@ -10,6 +10,6 @@ angular.module('kheoApp').controller('ServerListCtrl', ['$scope', '$resource', '
     $scope.delete = function(serverHostname) {
         $resource(configuration.backend + '/servers/' + serverHostname).delete().$promise.then(function() { $scope.init(); });
     };
-    
-    $scope.init(); 
+
+    $scope.init();
 }]);

@@ -10,11 +10,11 @@ describe('Controller: ServerListCtrl', function () {
   beforeEach(inject(function($injector) {
     $httpBackend = $injector.get('$httpBackend');
     $rootScope = $injector.get('$rootScope');
-    $resource = $injector.get('$resource');    
+    $resource = $injector.get('$resource');
     $controller = $injector.get('$controller');
-    configuration = $injector.get('configuration');    
+    configuration = $injector.get('configuration');
 
-    scope = $rootScope.$new();    
+    scope = $rootScope.$new();
     ServerListCtrl = $controller('ServerListCtrl', {
       '$scope': scope,
       '$resource': $resource,
@@ -52,8 +52,8 @@ describe('Controller: ServerListCtrl', function () {
     $httpBackend.when('DELETE', configuration.backend + '/servers/myserver').respond(204);
     $httpBackend.expectDELETE(configuration.backend + '/servers/myserver');
     
-    scope.delete('myserver');        
-    $httpBackend.flush();    
+    scope.delete('myserver');
+    $httpBackend.flush();
   });
 
 });

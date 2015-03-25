@@ -15,7 +15,7 @@
           <label class="control-label" for="ssh-port">Port</label>
           <label id="ssh-port" type="text" class="form-control">{{server.sshPort}}</label>
         </div>
-        <div class="form-group">     
+        <div class="form-group">
           <label class="control-label" for="sudo">Sudo</label>  
           <input id="sudo" type="checkbox" ng-model="server.sudo" disabled="true"/>
         </div>
@@ -23,14 +23,14 @@
     </div>
   </tab>
   <tab heading="Discovery">
-    <div class="panel panel-default">      
+    <div class="panel panel-default">
       <div class="form-group" ng-repeat="key in getKeys(server.discoverySettings)">
         <label class="control-label" for="{{key}}">{{key}}</label>
         <input id="{{key}}" type="checkbox" ng-model="server.discoverySettings[key]" disabled="true"/>
       </div>
     </div>
   </tab>
-  <tab ng-repeat="plugin in plugins" heading="{{plugin.name}}" select="filterPluginProperties(plugin)" ng-show="server.discoverySettings[plugin.name] === true">        
+  <tab ng-repeat="plugin in plugins" heading="{{plugin.name}}" select="filterPluginProperties(plugin)" ng-show="server.discoverySettings[plugin.name] === true">
     <div role="form">
       <div class="panel panel-default" ng-repeat="property in pluginProperties">
         <div ng-if="property['@kheo-type'] === 'JSON'">
