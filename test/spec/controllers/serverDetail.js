@@ -45,10 +45,18 @@ describe('Controller: ServerDetailCtrl', function () {
     expect(scope.pluginProperties.length).toBe(3);
   });
 
-  it('should filter keys to ', function() {
+  it('should filter keys to exclude type $$hashKey key and @kheo-type', function() {
     $httpBackend.flush();
-    scope.filterPluginProperties(scope.plugins[0]);
-    expect(scope.pluginProperties.length).toBe(3);
+    var filtered = scope.getKeys(scope.pluginProperties[0]);
+    expect(filtered.hasOwnProperty('type')).toBe(false);
+    expect(filtered.hasOwnProperty('@kheo-type')).toBe(false);
+    expect(filtered.hasOwnProperty('$$hashKey')).toBe(false);
+  });
+
+  it('should give string value for a plugin property', function() {
+    $httpBackend.flush();    
+    var stringValue = scope.stringValue(scope.server.serverProperties[0]);
+    expect(stringValue).toBe('key=logo, description=logo');
   });
 
 });
