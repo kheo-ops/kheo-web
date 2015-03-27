@@ -5,8 +5,7 @@ dependencies:
 
 test:
   pre:
-    - grunt jshint    
-  override:
-    - grunt karma:unit
+    - grunt jshint
+  override:    
     - grunt replace:ci
     - grunt build
