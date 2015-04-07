@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('kheoApp').controller('ServerDetailCtrl', ['$scope', '$resource', '$routeParams', 'configuration', '_', function ($scope, $resource, $routeParams, configuration, _) {
+angular.module('kheoApp').controller('ServerDetailCtrl', ['$scope', '$resource', '$routeParams', 'configuration', '_', function ($scope, $resource, $routeParams, configuration, _) {    
     
-    $scope.privateCount = 0;
     $scope.server = $resource(configuration.backend + '/servers/' + $routeParams.hostname).get();
     $scope.plugins = $resource(configuration.backend + '/plugins').query();
     $scope.pluginProperties = [];
+    $scope.discovery = $scope.server.state === 'DISCOVERY';
 
-    $scope.filterPluginProperties = function(plugin) {        
+    $scope.filterPluginProperties = function(plugin) {
         $scope.pluginProperties = _.filter($scope.server.serverProperties, function(property) {
           return _.contains(plugin.propertiesNames, property.type);
         });
@@ -29,5 +29,15 @@ angular.module('kheoApp').controller('ServerDetailCtrl', ['$scope', '$resource',
             return item + '=' + obj[item];
         });
         return value.join(', ');
+    };
+
+    $scope.refresh = function() {
+        $scope.discovery = true;
+        $scope.server = $resource(configuration.backend + '/servers/' + $routeParams.hostname + '/discover').get().$promise.then(function() { $scope.discovery = false; $scope.init(); });
+    };
+
+    $scope.init = function() {
+      $scope.server = $resource(configuration.backend + '/servers/' + $routeParams.hostname).get();
+      $scope.plugins = $resource(configuration.backend + '/plugins').query();
     };
 }]);

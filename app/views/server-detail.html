@@ -1,7 +1,6 @@
 <tabset>  
   <tab heading="Informations">
-    <div role="panel panel-default">
-      <div role="panel-heading">Connection settings</div>
+    <div role="panel panel-default">      
       <div role="form">
         <div class="form-group">
           <label class="control-label" for="host">Host</label>
@@ -70,6 +69,11 @@
           </timeline-node>
         </timeline>
       </div>
-    </div>  
+    </div>
   </tab>
+  <div>
+    <button class="btn btn-default pull-right" ng-click="refresh()" ng-disabled="discovery === true">
+      <span class="glyphicon glyphicon-refresh"></span>
+    </button>
+  </div>
 </tabset>

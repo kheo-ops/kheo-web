@@ -10,6 +10,7 @@
                 <th>Port</th>
                 <th>Sudo</th>
                 <th>Connectivity</th>
+                <th>Updated at</th>
                 <th>State</th>
                 <th>Actions</th>
             </tr>
@@ -20,17 +21,18 @@
                 <td>{{server.user}}</td>
                 <td>{{server.sshPort}}</td>
                 <td ng-show="{{server.sudo === true}}">
-                    <span class="glyphicon glyphicon-ok"></span>
+                  <span class="glyphicon glyphicon-ok"></span>
                 </td>
                 <td ng-show="{{server.sudo === false}}">
-                    <span class="glyphicon glyphicon-remove"></span>
+                  <span class="glyphicon glyphicon-remove"></span>
                 </td>                
                 <td ng-show="{{server.sshConnectionValidity === true}}">
-                    <span class="glyphicon glyphicon-ok"></span>
+                  <span class="glyphicon glyphicon-ok"></span>
                 </td>
                 <td ng-show="{{server.sshConnectionValidity === false}}">
-                    <span class="glyphicon glyphicon-remove"></span>
+                  <span class="glyphicon glyphicon-remove"></span>
                 </td>
+                <td></td>
                 <td>{{server.state}}</td>
                 <td>
                   <div>
@@ -40,6 +42,7 @@
                     <a ng-href="#/servers/{{server.host}}/edit">
                       <span class="glyphicon glyphicon-edit"></span>
                     </a>
+                    <span class="glyphicon glyphicon-refresh" ng-click="refresh(server.host)" ng-disabled="server.state === 'DISCOVERING'"></span>
                     <span class="glyphicon glyphicon-remove" ng-click="delete(server.host)"></span>
                   </div>
                 </td>

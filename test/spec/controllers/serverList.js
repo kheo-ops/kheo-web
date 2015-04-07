@@ -53,6 +53,18 @@ describe('Controller: ServerListCtrl', function () {
     $httpBackend.expectDELETE(configuration.backend + '/servers/myserver');
     
     scope.delete('myserver');
+    $httpBackend.expectGET(configuration.backend + '/servers');
+    $httpBackend.flush();
+  });
+
+  it('should refresh server on demand', function () {
+    $httpBackend.expectGET(configuration.backend + '/servers');
+
+    $httpBackend.when('GET', configuration.backend + '/servers/myserver/discover').respond(200, readJSON('test/mock/serverDetail.json'));
+    $httpBackend.expectGET(configuration.backend + '/servers/myserver/discover');
+
+    scope.refresh('myserver');
+    $httpBackend.expectGET(configuration.backend + '/servers');
     $httpBackend.flush();
   });
 
